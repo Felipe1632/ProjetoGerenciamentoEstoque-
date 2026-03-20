@@ -79,6 +79,10 @@ public void cadastrar(ProdutoBean produto) {
         }
     }
 }
+
+
+
+
     public List<ProdutoBean> listar(){
         List<ProdutoBean> produto = new ArrayList();
         try {
