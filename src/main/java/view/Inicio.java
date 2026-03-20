@@ -4,19 +4,49 @@
  */
 package view;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.ProdutoBean;
+import model.ProdutoDAO;
+
 /**
  *
  * @author Usuario
  */
 public class Inicio extends javax.swing.JFrame {
-
+    
+    private final ProdutoDAO produtoDAO;
+    private DefaultTableModel tableModel;
     /**
      * Creates new form Inicio
      */
     public Inicio() {
+        this.produtoDAO = new ProdutoDAO();
         initComponents();
+        initTable();
+        carregarProdutos();
+    }
+    
+    private void initTable(){
+        tableModel = new DefaultTableModel(
+            new Object[]{"ID", "Nome", "Preço", "Estoque"}, 0);
+                tabelaProduto.setModel(tableModel);
     }
 
+    private void carregarProdutos(){
+        tableModel.setRowCount(0);
+        
+        List<ProdutoBean> produtos = produtoDAO.listar();
+        
+        for (ProdutoBean p : produtos){
+            tableModel.addRow(new Object[] {
+                p.getId(),
+                p.getNome(),
+                p.getPreco(),
+                p.getEstoque()
+            });
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -7,7 +7,10 @@ package model;
 import conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -76,4 +79,27 @@ public void cadastrar(ProdutoBean produto) {
         }
     }
 }
+    public List<ProdutoBean> listar(){
+        List<ProdutoBean> produto = new ArrayList();
+        try {
+            Connection conn = Conexao.conectar();
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            
+            stmt = conn.prepareStatement(
+                    "SELECT * FROM produto");
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                ProdutoBean produtos = new ProdutoBean(
+                    rs.getInt("id"),
+                    rs.getString("nome"),
+                    rs.getDouble("preco"),
+                    rs.getInt("estoque"));
+                
+                produto.add(produtos);
+
+            }    rs.close(); stmt.close(); conn.close();
+        } catch (SQLException e) { e.printStackTrace();}
+        return produto;
+  } 
 }
