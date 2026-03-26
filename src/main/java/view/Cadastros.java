@@ -35,8 +35,9 @@ public class Cadastros extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 51));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        tabelaProduto.setBackground(new java.awt.Color(204, 204, 204));
         tabelaProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -58,6 +59,7 @@ public class Cadastros extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel2.setText("Gerenciamento de Cadastros");
 
+        voltar.setBackground(new java.awt.Color(255, 153, 0));
         voltar.setText("Voltar");
         voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

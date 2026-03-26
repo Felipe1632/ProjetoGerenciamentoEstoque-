@@ -41,6 +41,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         nomeproduto.setBackground(new java.awt.Color(204, 204, 204));
         nomeproduto.addActionListener(new java.awt.event.ActionListener() {
@@ -49,6 +50,7 @@ public class CadastroProduto extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Nome:");
 
@@ -82,7 +84,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         });
 
         voltarInicio.setBackground(new java.awt.Color(204, 204, 204));
-        voltarInicio.setText("voltar");
+        voltarInicio.setText("Voltar");
         voltarInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 voltarInicioActionPerformed(evt);
@@ -96,7 +98,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(356, 356, 356))
@@ -113,7 +115,7 @@ public class CadastroProduto extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(nomeproduto, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 167, Short.MAX_VALUE)
                         .addComponent(cadastrarprodut, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(100, 100, 100))
                     .addGroup(layout.createSequentialGroup()
@@ -180,8 +182,8 @@ if (nome.isEmpty() || precoTexto.isEmpty() || estoqueTexto.isEmpty()) {
         produto.setPreco(preco);
         produto.setEstoque(estoque);
 
-        ProdutoDAO dao = new ProdutoDAO();
-        dao.cadastrar(produto);
+       // ProdutoDAO dao = new ProdutoDAO();
+        dao.cadastrarProduto(produto);
 
         JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
 

@@ -4,17 +4,42 @@
  */
 package view;
 
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.ProdutoBean;
+import model.ProdutoDAO;
+
 /**
  *
  * @author Usuario
  */
 public class Inicio extends javax.swing.JFrame {
+    DefaultTableModel model;
 
     /**
      * Creates new form Inicio
      */
     public Inicio() {
         initComponents();
+    }
+    
+    public void PreencherTabela() {
+        model = (DefaultTableModel) tabelaProduto.getModel();
+        model.setRowCount(0);
+       
+        // ProdutoDAO dao = new ProdutoDAO();
+        List<ProdutoBean> produtos = dao.ler();
+       
+        for(ProdutoBean j: produtos) {
+            Object[] linha = {
+                j.getId(),
+                j.getNome(),
+                j.getPreco(),
+                j.getEstoque()
+            };
+           
+            model.addRow(linha);
+        }
     }
 
     /**
@@ -38,7 +63,7 @@ public class Inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(0, 204, 51));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         tabelaProduto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,6 +86,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel2.setText("Gerenciamento de produtos");
 
+        jButton1.setBackground(new java.awt.Color(255, 153, 0));
         jButton1.setText("Cadastros");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +100,7 @@ public class Inicio extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel4.setText("Cadastrar produtos");
 
+        jButton2.setBackground(new java.awt.Color(255, 153, 0));
         jButton2.setText("Proximo");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
