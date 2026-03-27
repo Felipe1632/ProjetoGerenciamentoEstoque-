@@ -155,6 +155,7 @@ public class CadastroProduto extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nomeprodutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeprodutoActionPerformed
@@ -182,10 +183,8 @@ if (nome.isEmpty() || precoTexto.isEmpty() || estoqueTexto.isEmpty()) {
         produto.setPreco(preco);
         produto.setEstoque(estoque);
 
-       // ProdutoDAO dao = new ProdutoDAO();
+        ProdutoDAO dao = new ProdutoDAO();
         dao.cadastrarProduto(produto);
-
-        JOptionPane.showMessageDialog(null, "Produto cadastrado com sucesso!");
 
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(null, "Preço e estoque devem ser números válidos!");

@@ -34,9 +34,9 @@ public class Conexao {
         return conn;
     }
 
-    public static Connection getConexao() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    //public static Connection getConexao() {
+    //    throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    //}
     
    public static void testarConexao() {
     Connection conn = conectar();

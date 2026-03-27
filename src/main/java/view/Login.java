@@ -78,7 +78,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Aluno\\Downloads\\15639931-conceito-de-sistema-de-controle-de-estoque-gerente-profissional-verificando-mercadorias-e-estoque-gerenciamento-de-estoque-com-demanda-de-mercadorias-vetor (1).jpg")); // NOI18N
         jLabel2.setMaximumSize(new java.awt.Dimension(8256, 5504));
         jLabel2.setMinimumSize(new java.awt.Dimension(8256, 5504));
         jLabel2.setPreferredSize(new java.awt.Dimension(8256, 5504));
@@ -166,6 +165,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void usuarioTxt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTxt2ActionPerformed
@@ -202,7 +202,7 @@ public class Login extends javax.swing.JFrame {
     if (!dao.existsByUsername(currentUser, currentSenha)) {
         JOptionPane.showMessageDialog(null, "Erro ao realizar login, verifique usuário e senha e tente novamente.");
     } else {
-        JOptionPane.showMessageDialog(null, "Usuário " + login.getNome() + " logado com sucesso."); 
+        JOptionPane.showMessageDialog(null, "Usuário logado com sucesso."); 
         Inicio telaInicio = new Inicio();      
         telaInicio.setVisible(true);
         this.dispose();
