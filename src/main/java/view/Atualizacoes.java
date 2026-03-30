@@ -4,6 +4,7 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
 import model.ProdutoBean;
 import model.ProdutoDAO;
 
@@ -12,12 +13,17 @@ import model.ProdutoDAO;
  * @author Aluno
  */
 public class Atualizacoes extends javax.swing.JFrame {
-        
+    
+    
+     
     private final ProdutoDAO conexao;
     private ProdutoBean produtobean;
+    private int id;
     
     public Atualizacoes(ProdutoBean produto) {
+
         this.produtobean = produto;
+        this.id = produtobean.getId();
         this.conexao = new ProdutoDAO();
         
         initComponents();
@@ -83,6 +89,11 @@ public class Atualizacoes extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setText("Deletar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         atualizar.setBackground(new java.awt.Color(0, 255, 51));
         atualizar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -187,6 +198,16 @@ public class Atualizacoes extends javax.swing.JFrame {
         Inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarPinicioActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // botao remover
+        ProdutoDAO dao = new ProdutoDAO();
+        dao.excluir(this.id);
+        JOptionPane.showMessageDialog(null, "Produto deletado!");
+        Inicio inicio = new Inicio();
+        inicio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

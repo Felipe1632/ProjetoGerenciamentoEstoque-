@@ -120,7 +120,7 @@ public class ProdutoDAO {
             
             stmt = conn.prepareStatement(
                 "DELETE FROM produtos WHERE id = ?" );
-            stmt.setInt(1, id);
+            stmt.setString(1, String.valueOf(id));
             
             stmt.executeUpdate();
         } catch(SQLException e) {
