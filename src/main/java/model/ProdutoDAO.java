@@ -105,6 +105,7 @@ public class ProdutoDAO {
         stmt.setString(1, produtos.getNome());
         stmt.setDouble(2, produtos.getPreco());
         stmt.setInt(3, produtos.getEstoque());
+        stmt.setInt(4, produtos.getId());
         stmt.executeUpdate();
         
     } catch(SQLException e) {

@@ -59,6 +59,7 @@ public class Atualizacoes extends javax.swing.JFrame {
         jLabel2.setText("ID:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Nome:");
@@ -171,6 +172,7 @@ public class Atualizacoes extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nomeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeFieldActionPerformed
@@ -186,17 +188,28 @@ public class Atualizacoes extends javax.swing.JFrame {
     }//GEN-LAST:event_estoqueFieldActionPerformed
 
     private void atualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_atualizarActionPerformed
-       // try{
-           // produtobean.setNome(nomeField.getText());
-          //  produtobean.setPreco(String.valueOf(precoField.getText()));
-          //  produtobean.setEstoque(String.valueOf());
-       // }
+                try {
+        String nome = nomeField.getText();
+        double preco = Double.parseDouble(precoField.getText());
+        int estoque = Integer.parseInt(estoqueField.getText());
+
+        produtobean.setNome(nome);
+        produtobean.setPreco(preco);
+        produtobean.setEstoque(estoque);
+
+        conexao.update(produtobean);
+
+        JOptionPane.showMessageDialog(this, "Produto atualizado com sucesso!");
+        this.dispose();
+
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Verifique os campos Preço e Estoque!");
+    }
+
     }//GEN-LAST:event_atualizarActionPerformed
 
     private void voltarPinicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarPinicioActionPerformed
-        Inicio Inicio = new Inicio();
-        Inicio.setVisible(true);
-        this.dispose();
+      this.dispose();
     }//GEN-LAST:event_voltarPinicioActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -204,8 +217,6 @@ public class Atualizacoes extends javax.swing.JFrame {
         ProdutoDAO dao = new ProdutoDAO();
         dao.excluir(this.id);
         JOptionPane.showMessageDialog(null, "Produto deletado!");
-        Inicio inicio = new Inicio();
-        inicio.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

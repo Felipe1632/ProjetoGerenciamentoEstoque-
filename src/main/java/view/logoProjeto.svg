@@ -1,0 +1,42 @@
+<svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Fundo -->
+  <rect width="600" height="200" fill="#FFFFFF"></rect>
+
+  <!-- Sombra do ícone -->
+  <ellipse cx="110" cy="140" rx="50" ry="10" fill="#000000" opacity="0.08"></ellipse>
+
+  <!-- Ícone principal (caixa moderna) -->
+  <rect x="60" y="50" width="100" height="80" rx="16" fill="#FF7A00"></rect>
+
+  <!-- Gradiente -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFA94D;stop-opacity:1"></stop>
+      <stop offset="100%" style="stop-color:#FF7A00;stop-opacity:1"></stop>
+    </linearGradient>
+  </defs>
+
+  <rect x="60" y="50" width="100" height="80" rx="16" fill="url(#grad1)"></rect>
+
+  <!-- Tampa da caixa -->
+  <polygon points="60,50 110,25 170,50" fill="#FFA94D"></polygon>
+
+  <!-- Seta moderna -->
+  <path d="M85 85 L120 85 L120 75 L145 95 L120 115 L120 105 L85 105 Z" fill="#FFFFFF"></path>
+
+  <!-- Nome -->
+  <text x="200" y="105" font-family="Poppins, Arial, sans-serif" font-size="48" fill="#333333" font-weight="600">
+    Stock
+  </text>
+
+  <text x="380" y="105" font-family="Poppins, Arial, sans-serif" font-size="48" fill="#FF7A00" font-weight="700">
+    Pro
+  </text>
+
+  <!-- Subtítulo -->
+  <text x="200" y="135" font-family="Arial, sans-serif" font-size="16" fill="#777777">
+    Sistema de Gerenciamento de Estoque
+  </text>
+
+</svg>

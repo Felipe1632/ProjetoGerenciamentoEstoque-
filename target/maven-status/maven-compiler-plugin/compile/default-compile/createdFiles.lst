@@ -14,6 +14,7 @@ view\Login$4.class
 model\UsuarioDAO.class
 view\Cadastro$5.class
 view\Atualizacoes$3.class
+view\Inicio$5.class
 view\Inicio$1.class
 view\Atualizacoes$2.class
 view\CadastroProduto$2.class
