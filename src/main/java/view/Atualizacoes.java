@@ -88,7 +88,7 @@ public class Atualizacoes extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 51, 51));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setText("Deletar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,7 +96,7 @@ public class Atualizacoes extends javax.swing.JFrame {
             }
         });
 
-        atualizar.setBackground(new java.awt.Color(0, 255, 51));
+        atualizar.setBackground(new java.awt.Color(204, 204, 204));
         atualizar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         atualizar.setText("Atualizar");
         atualizar.addActionListener(new java.awt.event.ActionListener() {

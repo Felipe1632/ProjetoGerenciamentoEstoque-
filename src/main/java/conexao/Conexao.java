@@ -43,7 +43,7 @@ public class Conexao {
     if (conn == null) {
         JOptionPane.showMessageDialog(null, "Erro ao conectar!");
     } else {
-        JOptionPane.showMessageDialog(null, "Conectado com sucesso!");
+        //JOptionPane.showMessageDialog(null, "Conectado com sucesso!");
     }
 }
     
