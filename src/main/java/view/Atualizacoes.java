@@ -61,6 +61,8 @@ public class Atualizacoes extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Nome:");
 
@@ -105,7 +107,7 @@ public class Atualizacoes extends javax.swing.JFrame {
             }
         });
 
-        voltarPinicio.setBackground(new java.awt.Color(255, 153, 0));
+        voltarPinicio.setBackground(new java.awt.Color(51, 204, 0));
         voltarPinicio.setText("Voltar");
         voltarPinicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

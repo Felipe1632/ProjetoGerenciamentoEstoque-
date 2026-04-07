@@ -29,6 +29,7 @@ view\CadastroProduto$4.class
 view\Login.class
 model\ProdutoDAO.class
 view\Inicio$4.class
+view\Inicio$6.class
 view\Login$5.class
 view\Atualizacoes$4.class
 view\CadastroProduto$6.class
