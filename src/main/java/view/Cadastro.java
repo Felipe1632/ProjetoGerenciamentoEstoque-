@@ -159,37 +159,42 @@ public class Cadastro extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void entrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entrarActionPerformed
-        String currentUser = usuarioTxt.getText().trim();
-        String currentSenha = senhaTxt.getText().trim();
+    String nomeCompleto = usuarioTxt1.getText().trim();
+    String usuario = usuarioTxt.getText().trim();
+    String senha = senhaTxt.getText().trim();
 
-        if (currentUser == "") {
-            JOptionPane.showMessageDialog(null, "Preencha este campo corretamente!");
-        } else if (currentSenha == "") {
-            JOptionPane.showMessageDialog(null, "Preencha este campo corretamente!");
-        } else {
-        if ((usuarioTxt.getText().isEmpty()) || (usuarioTxt.getText().isEmpty()) ||
-    (senhaTxt.getText().isEmpty())) {
-    JOptionPane.showMessageDialog(null, "Os campos não podem retornar vazios");
-    } else {
-       
+    // Validação de campos vazios
+    if(nomeCompleto.isEmpty() || usuario.isEmpty() || senha.isEmpty()) {
+        JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos!");
+        return; // para execução até corrigir
+    }
+
+    if(nomeCompleto.length() < 5) {
+        JOptionPane.showMessageDialog(null, "O nome completo deve ter pelo menos 5 caracteres!");
+        return;
+    }
+
+    if(usuario.length() < 4) {
+        JOptionPane.showMessageDialog(null, "O nome de usuário deve ter pelo menos 4 caracteres!");
+        return;
+    }
+
+    if(senha.length() < 6) {
+        JOptionPane.showMessageDialog(null, "A senha deve ter pelo menos 6 caracteres!");
+        return;
+    }
+
     UsuarioDAO dao = new UsuarioDAO();
     UsuarioBean novoUsuario = new UsuarioBean();
-    novoUsuario.setNome(usuarioTxt1.getText());
-    novoUsuario.setUsuario(usuarioTxt.getText());
-    novoUsuario.setSenha(senhaTxt.getText());
+    novoUsuario.setNome(nomeCompleto);
+    novoUsuario.setUsuario(usuario);
+    novoUsuario.setSenha(senha);
     dao.cadastrar(novoUsuario);
-   
-    JOptionPane.showMessageDialog(null, "Usuário "+ usuarioTxt.getText()+" inserido com sucesso! ");
 
-    }
-            UsuarioDAO dao = new UsuarioDAO();
-            UsuarioBean usuarioLogado = dao.logar(currentUser, currentSenha);
-            if(usuarioLogado.getId() > 0) {
+    JOptionPane.showMessageDialog(null, "Usuário " + usuario + " inserido com sucesso!");
 
-            }
-        }
-        this.dispose();
-        new Login().setVisible(true);
+    this.dispose();
+    new Login().setVisible(true);
     }//GEN-LAST:event_entrarActionPerformed
 
     private void usuarioTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usuarioTxtActionPerformed
@@ -236,13 +241,6 @@ public class Cadastro extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Cadastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Cadastro().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
